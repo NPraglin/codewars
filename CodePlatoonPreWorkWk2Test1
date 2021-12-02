@@ -1,0 +1,35 @@
+// This one was a real stumper!!!! This function takes an input, replaces each character with the following character of the alphabet, capitalizes vowels, and keeps non-alpha characters
+
+function LetterChanges(str) { 
+  str.toLowerCase()
+  let charCodes = [];
+  for (let i = 0; i < str.length; i++) {
+    // obtain character codes of letters and put them in array
+    if (str.charCodeAt(i) > 96 && str.charCodeAt(i) < 122) {
+    charCodes.push(str.charCodeAt(i) + 1)
+    } else if (str.charCodeAt(i) == 122) 
+    {
+    charCodes.push(97)
+    }
+    else 
+    {
+    charCodes.push(str.charCodeAt(i))
+    }
+  }
+    // A new loop to properly capitalize the vowels
+  for (let i = 0; i < charCodes.length; i++) {
+    if (charCodes[i] == 97 || charCodes[i] == 101 || charCodes[i] === 105 || charCodes[i] == 111 || charCodes[i] == 117) 
+    { 
+    charCodes.splice(i, 1, (charCodes[i] - 32));
+    } else { 
+
+    }
+  }
+  // take array of char chodes and map to a string
+  let newStr = charCodes.map((x) => String.fromCharCode(x));
+  let finalStr = newStr.join('');
+  return finalStr
+}
+   
+// keep this function call here 
+console.log(LetterChanges(readline()));
