@@ -1,0 +1,7 @@
+// Codewars challenge removing the minimum number in an array of digits
+function removeSmallest(arr) {
+  arr = arr.slice(); //copy the array
+  // splicing the index of the minimum number... math minimum function, and applying it (returning the minimum number)
+  arr.splice( arr.indexOf(Math.min.apply(null, arr)),1)
+  return arr;
+  }
