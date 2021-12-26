@@ -1,0 +1,5 @@
+// Coding challenge that asks to write a redundant function to return the input parameter (a completely useless piece of code)
+function redundant(str) {
+	const f1 = function() {return str}
+	return f1
+}
