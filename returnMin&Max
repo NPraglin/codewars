@@ -1,0 +1,6 @@
+// Codewars challenge returning the lowest and highest value of numbers in an array
+function minMax(arr) {
+	arr.sort((a, b) => a - b)
+	let returnedArr = [arr[0], arr[arr.length - 1]]
+	return returnedArr
+}
