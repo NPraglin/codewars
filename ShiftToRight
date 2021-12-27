@@ -1,0 +1,7 @@
+// This code mimics the >> operator
+function shiftToRight(x, y) {
+	let dividedBy = 2**y;
+	let val = x;
+
+	return Math.floor(val / dividedBy)
+}
