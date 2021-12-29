@@ -1,0 +1,2 @@
+// Find out how many <div> elements are used in a string. Use the character class \W in your expression.
+const REGEXP = /\W\/[d]/g
