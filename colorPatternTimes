@@ -1,0 +1,15 @@
+// When coloring a striped pattern, you may start by coloring each square sequentially, meaning you spend time needing to switch coloring pencils.
+
+// Create a function where given an array of colors cols, return how long it takes to color the whole pattern. Note the following times:
+
+// It takes 1 second to switch between pencils.
+// It takes 2 seconds to color a square.
+// EXAMPLE: color_pattern_times(["Red", "Blue", "Red", "Blue", "Red"]) ➞ 14
+
+function colorPatternTimes(cols) {
+	let counter = 0
+	for (let i = 0; i < cols.length; i++) {
+		if (cols[i] == cols[i+1]) { counter += 2} else {counter += 3}
+	}
+	return counter - 1
+}
