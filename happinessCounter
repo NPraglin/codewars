@@ -1,0 +1,14 @@
+// You will be given a string of characters containing only the following characters: ():
+
+// Create a function returns a number based on the number of sad and smiley faces there is.
+
+// The happy faces :) and (: are worth 1.
+// The sad faces :( and ): are worth -1.
+
+function happinessNumber(s) {
+	let counter = 0;
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] == ':' && s[i+1] == ')')	{counter +=1 } else if (s[i] == ':' && s[i+1] == '(') {counter -=1} else if (s[i] == '(' && s[i+1] == ':') {counter +=1} else if (s[i] == ')' && s[i+1] == ':') {counter -= 1}
+				}
+	return counter
+}
