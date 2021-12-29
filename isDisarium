@@ -1,0 +1,13 @@
+// A number is said to be Disarium if the sum of its digits raised to their respective positions is the number itself.
+
+// Create a function that determines whether a number is a Disarium or not.
+
+function isDisarium(n) {
+const numStr = n.toString()
+let counter = 0
+for (let i = 0; i < numStr.length; i++)
+	{parseInt(numStr[i])
+	counter += (numStr[i]**(i+1))		
+	}
+	if (counter == n) {return true} else {return false}
+}
