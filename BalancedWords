@@ -1,0 +1,29 @@
+// EXAMPLES
+// balanced("zips") ➞ true
+// "zips" = "zi|ps" = 26+9|16+19 = 35|35 = true
+
+// balanced("brake") ➞ false
+// "brake" = "br|ke" = 2+18|11+5 = 20|16 = false
+
+
+function balanced(word) {
+	const wLen = word.length;
+	let half = (wLen / 2);
+	
+	const firstHalf = word.slice(0, half);
+	const secondHalf = word.slice(-half);
+	let counterOne = 0;
+	let counterTwo = 0;
+	if (wLen%2 == 1) {half -= 1}
+
+	for (let i = 0; i < firstHalf.length; i++) {
+		counterOne += firstHalf.charCodeAt(i)
+	}
+	
+	for (let i = 0; i < secondHalf.length; i++) {
+		counterTwo += secondHalf.charCodeAt(i)
+	}
+	
+	if (counterOne == counterTwo) { return true } else { return false }
+         
+}
