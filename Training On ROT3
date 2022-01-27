@@ -1,0 +1,37 @@
+function rot13(message){
+  let counter = 0;
+  let sampleArr = [];
+  let charCodeArr = [];
+  let cipher = '';
+  console.log(message)
+  
+  for (let i = 0; i < message.length; i++) {
+    sampleArr.push(message.charCodeAt(i))
+    };
+  
+  console.log(sampleArr);
+  
+  for (let i = 0; i < sampleArr.length; i++) {
+    counter = sampleArr[i] + 13;
+    
+    if (counter > 122 && counter < 136) {
+      counter = counter - 122;
+      charCodeArr.push(counter + 96);
+    }
+    else if (counter > 94 && counter < 110 ) {
+      counter = counter - 90;
+      charCodeArr.push(counter + 64); 
+    } 
+    else if (sampleArr[i] < 64) {
+      charCodeArr.push(sampleArr[i]);
+    }
+    else {
+      charCodeArr.push(counter)
+    }
+  }
+    
+  cipher = String.fromCharCode.apply(null, charCodeArr);
+  console.log(cipher)
+  console.log(charCodeArr)
+  return cipher
+}
